@@ -20,7 +20,7 @@ export class TarefasService {
     const tarefas = this.listarTodos(); //Obtem todas as tarefas para cadastrar
     tarefa.id = new Date().getTime(); // gerar o id da tarefa cadastrada
     tarefas.push(tarefa); // adiciona no array tarefas
-    localStorage['tarefas'] = JSON.stringify(tarefas) //adiciona a mnova tarefa junto com todas as tarefas no localStorage
+    localStorage['tarefas'] = JSON.stringify(tarefas) //adiciona a nova tarefa junto com todas as tarefas no localStorage
   }
 
   buscarPoiId(id: number): Tarefa { //bucar o id e retorna a tarefa
