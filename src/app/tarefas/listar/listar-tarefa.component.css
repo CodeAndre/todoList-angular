@@ -10,3 +10,6 @@
 .remove, .edit {
     margin-right: 1rem;
 }
+.notC {
+    background-color: rgba(218, 219, 135, 0.301);
+}
