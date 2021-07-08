@@ -21,4 +21,19 @@ export class ListarTarefaComponent implements OnInit {
   listarTodos(): Tarefa[] {
     return this.tarefasService.listarTodos();
   }
+
+  remover($event: any, tarefa: Tarefa): void { // adicionamos o $event para recuperar funções do JS
+    $event.preventDefault(); // evitar o carregamento da página
+    if (confirm(`Deseja remover a tarefa: "${tarefa.nome}" ?`)) {
+      this.tarefasService.remover(tarefa.id); //chama o serviço de remover
+      this.tarefas = this.listarTodos(); //atualizar a tabela 
+    }
+  }
+
+  alterarStatus(tarefa: Tarefa): void {
+    if(confirm(`Deseja altera os status da tarefa: "${tarefa.nome}" ?`)) {
+      this.tarefasService.alterarStatus(tarefa.id); //pega o serviço alterarStatus
+      this.tarefas = this.listarTodos(); //atualizar
+    }
+  }
 }

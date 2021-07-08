@@ -24,16 +24,22 @@
                     <input 
                     type="checkbox"
                     [value]="tarefa.id"
-                    [checked]='tarefa.concluida'>
+                    [checked]='tarefa.concluida'
+                    (click)="alterarStatus(tarefa)">
                 </td>
                 <td class="text-end" style="width: 200px;">
                     <a
-                    title="Editar" alt="Editar" class="btn btn-sm btn-info edit">
+                    [routerLink]="['/tarefas/editar', tarefa.id]" 
+                    title="Editar" 
+                    alt="Editar" 
+                    class="btn btn-sm btn-info edit"
+                    >
                     <span class=""
                     aria-hidden="true"></span> Editar
                     </a>
                     <a href="#" title="Remover" alt="Remover"
-                    class="btn btn-sm btn-danger remove">
+                    class="btn btn-sm btn-danger remove"
+                    (click)="remover($event, tarefa)">
                     <span class=""
                     aria-hidden="true"></span> Remover
                     </a>
